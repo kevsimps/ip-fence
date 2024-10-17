@@ -1,0 +1,25 @@
+/* :host {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  } */
+.modal {
+    position: absolute;
+    z-index: 5;
+    height: 25vh;
+    background: #ccc;
+    left: 20%;
+    top: 50%;
+    padding: 2em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
