@@ -6,7 +6,7 @@ export class ipFence extends LitElement {
     @state() agentIP = ""
     @state() match = false
     @property() approvedIP = ["127.0.0.1", "127.0.0.2", "173.38.117.821"]
-    @property() team: String = "billOut" //$STORE.agent.teamName
+    @property() team: String = "Outbound Team" //$STORE.agent.teamName
     @property() isCampaignManagementEnabled?: boolean //$STORE.agent.isCampaignManagementEnabled
     @property() accessToken: String = "" //$STORE.auth.accessToken
     @property() agentID: String = "" //$STORE.agent.agentId
