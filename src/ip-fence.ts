@@ -10,9 +10,7 @@ export class ipFence extends LitElement {
     @property() isCampaignManagementEnabled?: boolean //$STORE.agent.isCampaignManagementEnabled
     @property() accessToken: String = "" //$STORE.auth.accessToken
     @property() agentID: String = "" //$STORE.agent.agentId
-    @property({ type: Number })
     @property() omitString = "Out"
-    count = 0
     static styles = css`
     .modal {
     position: fixed;
