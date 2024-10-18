@@ -5,12 +5,13 @@ import { customElement, property, state } from 'lit/decorators.js'
 export class ipFence extends LitElement {
     @state() agentIP = ""
     @state() match = false
-    @property() approvedIP = ["127.0.0.1", "127.0.0.2", "173.38.117.82"]
-    @property() team?: String //$STORE.agent.teamName
+    @property() approvedIP = ["127.0.0.1", "127.0.0.2", "173.38.117.821"]
+    @property() team: String = "billOut" //$STORE.agent.teamName
     @property() isCampaignManagementEnabled?: boolean //$STORE.agent.isCampaignManagementEnabled
     @property() accessToken: String = "" //$STORE.auth.accessToken
     @property() agentID: String = "" //$STORE.agent.agentId
     @property({ type: Number })
+    @property() omitString = "Out"
     count = 0
     static styles = css`
     .modal {
@@ -49,22 +50,25 @@ export class ipFence extends LitElement {
     width:3%;
     Height:93%;
     }
+    .hidden{
+    display:none
+    }
     `
     render() {
         return html`
+        <div class=${this.team.includes(this.omitString)? ((this.match) ? "hidden" : "") : "hidden"}>
     <div class="cover"></div>
-    <div class="cover2"></div>
-    <div class="modal">
-      <h1>You are at IP: ${this.agentIP}</h1>
-      <h2>Allowed IP addresses are: ${this.approvedIP}</h2>
-      <h2>Your IP address matches one in the list: ${this.match}</h2>
-      <p> 
-      You are currently logged into: ${this.team} <br>
-      Campaign Enabled: ${this.isCampaignManagementEnabled}<br>
-      </p>
-      <button @click="${this.logOutAgent}">Log Out</button>
+        <div class="cover2"></div>
+        <div class="modal">
+            <h1>Your IP address is: ${this.agentIP}</h1>
+            <h2>Team "${this.team}" is not allowed to make outbound calls while not in the office.</h2>
+            <h2>
+            Please log into a different team or contact your supervisor.
+            </h2>
+
+            <button @click="${this.logOutAgent}">Log Out</button>
     </div>
-   
+   </div>
   `
     }
 

@@ -23,7 +23,8 @@
                             "isCampaignManagementEnabled": "$STORE.agent.isCampaignManagementEnabled",
                             "accessToken": "$STORE.auth.accessToken",
                             "agentID": "$STORE.agent.agentId",
-                            "approvedIP": ["127.0.0.1", "127.0.0.2", "173.38.117.82"]
+                            "approvedIP": ["127.0.0.1", "127.0.0.2", "173.38.117.82"],
+                            "omitString":"Out"
                         },
                         "script": "https://kevsimps.github.io/ip-fence/dist/assets/index-iVcIDPeC.js"
                     }
